@@ -28,7 +28,7 @@ while `toPStoPDF` specifices
 
     * `doublespace` - when specified, document is double spaced
 
-## Examples
+### Examples
 * [Approximate pricing of European and Barrier claims in a local-stochastic volatility setting](https://arxiv.org/pdf/1610.05728.pdf)
 
 ### Note
