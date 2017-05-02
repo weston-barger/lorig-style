@@ -1,7 +1,7 @@
 ## lorig-style
 
 
-Matt Lorig (https://mattlorig.yolasite.com/) has made a career out of producing beautiful latex documents. His stylistic choices have been compiled into this package. To use, simply place "lorig.sty" in your latex path and use \usepackage{lorig} to include.
+Matt Lorig (https://mattlorig.yolasite.com/) has made a career out of producing beautiful latex documents. His stylistic choices have been compiled into this package. To use, simply place "lorig.sty" in your latex path and use `\usepackage{lorig}` to include.
 
  Optional arguments:
 
