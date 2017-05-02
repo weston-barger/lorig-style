@@ -28,8 +28,8 @@ while `toPStoPDF` specifices
 
     * `doublespace` - when specified, document is double spaced
 
-Examples of this package in use: 
-	[Approximate pricing of European and Barrier claims in a local-stochastic volatility setting](https://arxiv.org/pdf/1610.05728.pdf)
+## Examples
+* [Approximate pricing of European and Barrier claims in a local-stochastic volatility setting](https://arxiv.org/pdf/1610.05728.pdf)
 
 ### Note
 * The `eqnarray` environment is made illegal i.e. `\PackageError` is thrown when `eqnarray` is used. Please use the `align` environment instead.
