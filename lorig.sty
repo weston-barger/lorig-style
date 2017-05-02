@@ -194,6 +194,11 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Make \eqnarray illegal.
+\renewcommand{\eqnarray}{\PackageError{lorig}{Use of eqnarray is illegal. Use align.}{}}
+\renewcommand{\eqnarray*}{\PackageError{lorig}{Use of eqnarray* is illegal. Use align.}{}}
+
+
 % show only labels
 \mathtoolsset{showonlyrefs=true}
 
