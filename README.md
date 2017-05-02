@@ -5,17 +5,25 @@ Matt Lorig (https://mattlorig.yolasite.com/) has made a career out of producing 
 
  Optional arguments:
 
-   Mutually exclusive argments:
-	*__frenchmath__ OR __italics__   (default: frenchmath) -  defines option to be used for mathastext package
+* Mutually exclusive argments:
 
-	*__toDVItoPDf__ OR __toPStoPDF__ (default: toPStoPDF)  -  the toDVItoPDf specifices 
-		\RequirePackage[pdftex]{graphicx}\RequirePackage{epstopdf} 
-		while toPStoPDF specifices  \RequirePackage{graphicx}
+    * __frenchmath__ OR __italics__   (default: frenchmath) -  defines option to be used for mathastext package
 
-   Other options:
-	*__draft__       - when specified, equation labels are shown on the left
+    * __toDVItoPDf__ OR __toPStoPDF__ (default: toPStoPDF)  -  the __toDVItoPDf__ specifices 
 
-	*__doublespace__ - when specified, document is doublespaced
+```
+\RequirePackage[pdftex]{graphicx}
+\RequirePackage{epstopdf}
+``` 
+while __toPStoPDF__ specifices 
+```
+\RequirePackage{graphicx}
+```
+
+* Other options:
+    * __draft__       - when specified, equation labels are shown on the left
+
+    * __doublespace__ - when specified, document is doublespaced
 
 Examples of this package in use: 
 	[Approximate pricing of European and Barrier claims in a local-stochastic volatility setting](https://arxiv.org/pdf/1610.05728.pdf)
