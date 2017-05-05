@@ -155,6 +155,8 @@
 % used for show only labels
 \RequirePackage{mathtools}                     
 
+% needed to test for ifpdf
+\RequirePackage{ifpdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -172,21 +174,14 @@
 	\RequirePackage[italic]{mathastext}
 \fi
 
-% set the toDVItoPDF vs toPStoPDF style
-\ifnum1<\value{compilecounter}
-	\PackageError{lorig}{Options 'toDVItoPDF' and 'toPStoPDF' are mutually exclusive.}{}
-\fi
-\if@toDVItoPDF
+% Are we using pdflatex ? 
+\ifpdf
 	\RequirePackage[pdftex]{graphicx}
 	\RequirePackage{epstopdf}
-\fi
-\if@toPStoPDF
-	\RequirePackage{graphicx} 
+\else
+	\RequirePackage{graphicx}
 \fi
 
-\if@draft
-	\RequirePackage[left]{showlabels}
-\fi
 
 \if@doublespace
 	\linespread{1.6}
