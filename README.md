@@ -12,16 +12,6 @@ To use, simply place "lorig.sty" in your latex path and use `\usepackage{lorig}`
 
     * `frenchmath` OR `italics`   (default: frenchmath) -  This setting defines option to be used for mathastext package. `frenchmath`
 
-
-```
-\RequirePackage[pdftex]{graphicx}
-\RequirePackage{epstopdf}
-``` 
-while `toPStoPDF` specifices 
-```
-\RequirePackage{graphicx}
-```
-
 * Other options:
     * `lmacros`     - Includes the macros defined in `lmacros.sty'
 
