@@ -204,7 +204,7 @@
   {\mdseries\scshape} % HEADFONT
   {.}         % HEADPUNCT
   { } % HEADSPACE
-  {\thmname{#1}\thmnumber{ #2} \ifx#3\empty\else(#3)\fi}
+  {\thmname{#1}\thmnumber{ #2}\ifx#3\empty\else (#3)\fi}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \numberwithin{theorem}{section}
@@ -223,7 +223,7 @@
   {\mdseries\scshape} % HEADFONT
   {.}         % HEADPUNCT
   { } % HEADSPACE
-  {\thmname{#1}\thmnumber{ #2} \ifx#3\empty\else(#3)\fi}
+  {\thmname{#1}\thmnumber{ #2}\ifx#3\empty\else (#3)\fi}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
