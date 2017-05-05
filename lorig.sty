@@ -39,23 +39,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% options for mathastext
-% these options are mutually exclusive
-\newcounter{mathastextcounter}
-\setcounter{mathastextcounter}{-1}
-\newif\if@it
-\newif\if@fm
-\DeclareOption{italics}{
-	\stepcounter{mathastextcounter}
-	\@fmfalse
-	\@ittrue
-}
-\DeclareOption{frenchmath}{
-	\stepcounter{mathastextcounter}
-	\@fmtrue
-	\@itfalse
-}
-
 
 % use matt's macros?
 \newif\if@lmacro
@@ -80,9 +63,6 @@
 	\@doublespacetrue
 }
 
-% make the default math script
-% frenchmath i.e. no italics on capital letters
-\ExecuteOptions{frenchmath}
 \ProcessOptions\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,6 +103,14 @@
 \renewcommand{\rmdefault}{ccr}
 \renewcommand*\familydefault{\rmdefault}
 
+\RequirePackage[LGRgreek,frenchmath]{mathastext}
+\MTgreekfont{lmtt} % no lgr lmvtt, so use lgr lmtt
+\Mathastext
+
+% make the header titles 
+\RequirePackage{sectsty}
+\allsectionsfont{\mdseries\scshape}
+
 % ams and other math
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
@@ -155,16 +143,7 @@
 % 				OPTIONAL PACKAGE PROCESSING
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% set the math text style
-\ifnum1<\value{mathastextcounter}
-	\PackageError{lorig}{Options 'frenchmath' and 'italics' are mutually exclusive.}{}
-\fi
-\if@fm
-	\RequirePackage[frenchmath]{mathastext}
-\fi
-\if@it
-	\RequirePackage[italic]{mathastext}
-\fi
+
 
 % Are we using pdflatex ? 
 \ifpdf
@@ -217,6 +196,15 @@
 \numberwithin{equation}{section}
 
 % Theorem style information
+\newtheoremstyle{plain}
+  {}   % ABOVESPACE
+  {}   % BELOWSPACE
+  {\itshape}  % BODYFONT
+  {}       % INDENT (empty value is the same as 0pt)
+  {\mdseries\scshape} % HEADFONT
+  {.}         % HEADPUNCT
+  { } % HEADSPACE
+  {\thmname{#1}\thmnumber{ #2} \ifx#3\empty\else(#3)\fi}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \numberwithin{theorem}{section}
@@ -224,6 +212,18 @@
 \newtheorem{lemma}[theorem]{Lemma}       	
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+
+
+% Theorem style information
+\newtheoremstyle{definition}
+  {}   % ABOVESPACE
+  {}   % BELOWSPACE
+  {}  % BODYFONT
+  {}       % INDENT (empty value is the same as 0pt)
+  {\mdseries\scshape} % HEADFONT
+  {.}         % HEADPUNCT
+  { } % HEADSPACE
+  {\thmname{#1}\thmnumber{ #2} \ifx#3\empty\else(#3)\fi}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
