@@ -12,7 +12,6 @@ To use, simply place "lorig.sty" in your latex path and use `\usepackage{lorig}`
 
     * `frenchmath` OR `italics`   (default: frenchmath) -  This setting defines option to be used for mathastext package. `frenchmath`
 
-    * `toDVItoPDf` OR `toPStoPDF` (default: toPStoPDF)  -  The `toDVItoPDf` specifices 
 
 ```
 \RequirePackage[pdftex]{graphicx}
@@ -24,6 +23,8 @@ while `toPStoPDF` specifices
 ```
 
 * Other options:
+    * `lmacros`     - Includes the macros defined in `lmacros.sty'
+
     * `draft`       - when specified, equation labels are shown on the left
 
     * `doublespace` - when specified, document is double spaced
