@@ -1,0 +1,33 @@
+
+\documentclass[10pt]{article}
+
+\usepackage[draft,lmacro]{lorig}
+
+\title{Title text}
+\author{Weston Barger \thanks{\textbf{email:} weston.barger@gmail.com}}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Section text}
+\subsection{Subsection text}
+This is an example of paragraph text.
+
+\begin{theorem}[Name of the theorem]
+This is an example of theorem text.
+\end{theorem}
+
+\noindent
+Here is more paragraph text.
+\begin{align}
+f(\xi)
+	&= \eta, & 
+F(\Xi)
+	&= \Om \\
+\dd X_t 	
+	&= \alpha X_t \dd t + \beta X_t^\delta \dd W_t, & 
+u(t,z)
+	&=  \int_t^T \dd s \int_\Rb \dd\zeta\, \Gam_0\(t,z;s,\zeta\)	\label{eq:lab1}
+\end{align}
+Here is an equation reference \eqref{eq:lab1}.
+\end{document}
