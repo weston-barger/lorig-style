@@ -233,6 +233,30 @@
 
 \renewcommand{\title}[1]{\def\@title {\scshape #1}}
 
+\usepackage{relsize}
 
+\let\oGamma \Gamma       
+\let\oSigma \Sigma      
+\let\oLambda\Lambda       
+\let\oPsi   \Psi         
+\let\oDelta \Delta        
+\let\oXi    \Xi          
+\let\oUpsilon\Upsilon    
+\let\oOmega \Omega       
+\let\oTheta \Theta        
+\let\oPi    \Pi          
+\let\oPhi   \Phi      
+
+\renewcommand\Gamma  {\mathlarger\oGamma  } 
+\renewcommand\Sigma  {\mathlarger\oSigma  }
+\renewcommand\Lambda {\mathlarger\oLambda }
+\renewcommand\Psi    {\mathlarger\oPsi    }
+\renewcommand\Delta  {\mathlarger\oDelta  }
+\renewcommand\Xi     {\mathlarger\oXi     }
+\renewcommand\Upsilon{\mathlarger\oUpsilon}
+\renewcommand\Omega  {\mathlarger\oOmega  }
+\renewcommand\Theta  {\mathlarger\oTheta  }
+\renewcommand\Pi     {\mathlarger\oPi     }
+\renewcommand\Phi    {\mathlarger\oPhi    }
 
 \endinput
