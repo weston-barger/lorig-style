@@ -14,6 +14,7 @@ To use, simply place "lorig.sty" in your latex path and use `\usepackage{lorig}`
 
     * `doublespace` - when specified, document is double spaced
 
+    * `lgrgreek`    - uses `LGRgreek` option in `mathastext` and `lmtt` font for greek math letters
 ### Examples
 * [Approximate pricing of European and Barrier claims in a local-stochastic volatility setting](https://arxiv.org/pdf/1610.05728.pdf)
 
