@@ -11,14 +11,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+% LGRgreek
+\newif\if@lgrgreek
+\@lgrgreekfalse
+\DeclareOption{lgrgreek}{
+    \@lgrgreektrue
+}
+
 % use matt's macros?
 \newif\if@lmacro
 \@lmacrofalse
 \DeclareOption{lmacro}{
 	\@lmacrotrue
 }
-
-
 
 % draft
 % i.e. show eqrefs or not
@@ -57,27 +62,17 @@
 	right			=1.0in
 	]{geometry}
 
-
-
-%mathastext tells you to do so? 
-\AtBeginDocument{
-	\everymath={}
-	\everydisplay={}
-}
-
+\RequirePackage{type1ec}
 \RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
 \RequirePackage{lmodern}
 \RequirePackage{microtype}
 
 
 % sets default text font to concrete modern
-% \renewcommand{\rmdefault}{cc}
-% \renewcommand*\familydefault{\rmdefault}
-\RequirePackage{beton}
+\renewcommand{\rmdefault}{ccr}
+\renewcommand*\familydefault{\rmdefault}
 
-\RequirePackage[LGRgreek,frenchmath]{mathastext}
-\MTgreekfont{lmtt} % no lgr lmvtt, so use lgr lmtt
-\Mathastext
 
 % make the header titles 
 \RequirePackage{sectsty}
@@ -125,6 +120,36 @@
 	\RequirePackage{graphicx}
 \fi
 
+\if@lgrgreek
+    \RequirePackage[LGRgreek,frenchmath]{mathastext}
+    \MTgreekfont{lmtt} % no lgr lmvtt, so use lgr lmtt
+    \Mathastext
+    \let\oGamma   \Gamma       
+    \let\oSigma   \Sigma      
+    \let\oLambda  \Lambda       
+    \let\oPsi     \Psi         
+    \let\oDelta   \Delta        
+    \let\oXi      \Xi          
+    \let\oUpsilon \Upsilon    
+    \let\oOmega   \Omega       
+    \let\oTheta   \Theta        
+    \let\oPi      \Pi          
+    \let\oPhi     \Phi      
+
+    \renewcommand\Gamma   {\mathlarger\oGamma  } 
+    \renewcommand\Sigma   {\mathlarger\oSigma  }
+    \renewcommand\Lambda  {\mathlarger\oLambda }
+    \renewcommand\Psi     {\mathlarger\oPsi    }
+    \renewcommand\Delta   {\mathlarger\oDelta  }
+    \renewcommand\Xi      {\mathlarger\oXi     }
+    \renewcommand\Upsilon {\mathlarger\oUpsilon}
+    \renewcommand\Omega   {\mathlarger\oOmega  }
+    \renewcommand\Theta   {\mathlarger\oTheta  }
+    \renewcommand\Pi      {\mathlarger\oPi     }
+    \renewcommand\Phi     {\mathlarger\oPhi    }
+\else
+    \RequirePackage[frenchmath]{mathastext}
+\fi
 
 \if@doublespace
 	\linespread{1.6}
@@ -207,28 +232,6 @@
 
 \usepackage{relsize}
 
-\let\oGamma \Gamma       
-\let\oSigma \Sigma      
-\let\oLambda\Lambda       
-\let\oPsi   \Psi         
-\let\oDelta \Delta        
-\let\oXi    \Xi          
-\let\oUpsilon\Upsilon    
-\let\oOmega \Omega       
-\let\oTheta \Theta        
-\let\oPi    \Pi          
-\let\oPhi   \Phi      
 
-\renewcommand\Gamma  {\mathlarger\oGamma  } 
-\renewcommand\Sigma  {\mathlarger\oSigma  }
-\renewcommand\Lambda {\mathlarger\oLambda }
-\renewcommand\Psi    {\mathlarger\oPsi    }
-\renewcommand\Delta  {\mathlarger\oDelta  }
-\renewcommand\Xi     {\mathlarger\oXi     }
-\renewcommand\Upsilon{\mathlarger\oUpsilon}
-\renewcommand\Omega  {\mathlarger\oOmega  }
-\renewcommand\Theta  {\mathlarger\oTheta  }
-\renewcommand\Pi     {\mathlarger\oPi     }
-\renewcommand\Phi    {\mathlarger\oPhi    }
 
 \endinput
