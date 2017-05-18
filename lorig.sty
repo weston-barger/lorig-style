@@ -227,6 +227,13 @@
 \newtheorem{assumption}[theorem]{\underline{Assumption}}
 
 
+\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+\let\oldendproof\endproof
+\renewenvironment{proof}[1][\proofname]{%
+  \oldproof[\scshape\underline{#1}]%
+}{\oldendproof}
+
+
 \numberwithin{theorem}{section}
 
 
